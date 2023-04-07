@@ -1,0 +1,74 @@
+<!DOCTYPE <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>GO to Selection from Div</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         <style>
+            .box{
+                height: 800px;
+                width: 100%;
+            }
+            .red{
+                background-color: red;
+            }
+
+            .green{
+                background-color: green;
+            }
+
+            .blue{
+                background-color: blue;
+            }
+
+            #mySelect{
+                position: fixed;
+                top:0;
+                width: 98%;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <select id="mySelect">
+            <option>Red 1</option>
+            <option>Green 2</option>
+            <option>Blue 3</option>
+         </select>
+
+         <section class="content">
+                <div id="sect1" class="box red"></div>
+                <div id="sect2" class="box green"></div>
+                <div id="sect3" class="box blue"></div>
+            
+
+         </section>
+
+
+
+
+
+        <script>
+            // Change mySelect to your Select Box ID
+            sel = document.getElementById("mySelect");
+            // Change "sect1" to your section IDs
+            sect1 = document.getElementById("sect1");
+            sect2 = document.getElementById("sect2");
+            sect3 = document.getElementById("sect3");
+            sel.addEventListener('change', function(){
+               idx = sel.selectedIndex;
+               // Log for debugging
+               //console.log(idx);
+               switch(idx){
+               case 0: sect1.scrollIntoView({ behavior: 'smooth'});break;
+               case 1: sect2.scrollIntoView({ behavior: 'smooth'});break;
+               case 2: sect3.scrollIntoView({ behavior: 'smooth'});break;
+               default: break;
+            }
+            });
+            </script>
+    
+    </body>
+</html>
+
+
